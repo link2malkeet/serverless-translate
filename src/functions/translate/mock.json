@@ -1,0 +1,6 @@
+{
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": "{\"text\": \"I love you\", \"language\":\"germany\"}"
+}
