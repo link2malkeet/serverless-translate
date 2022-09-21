@@ -1,7 +1,7 @@
 {
   "name": "serverless-translate",
   "version": "1.0.0",
-  "description": "Serverless aws-nodejs-typescript template",
+  "description": "Serverless Translation",
   "main": "serverless.ts",
   "scripts": {
     "deploy": "serverless deploy",
@@ -33,6 +33,6 @@
     "webpack": "^5.20.2",
     "webpack-node-externals": "^2.5.2"
   },
-  "author": "The serverless webpack authors (https://github.com/elastic-coders/serverless-webpack)",
+  "author": "Mel",
   "license": "MIT"
 }
