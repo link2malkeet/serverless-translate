@@ -17,11 +17,10 @@ Depending on your preferred package manager, follow the instructions below to de
 
 ## Test your service
 
-This template contains a single lambda function triggered by an HTTP request made on the provisioned API Gateway REST API `/translate` route with `POST` method. The request body must be provided as `application/json`. The body structure is tested by API Gateway against `src/functions/hello/schema.ts` JSON-Schema definition: it must contain the `name` property.
+This template contains a single lambda function triggered by an HTTP request made on the provisioned API Gateway REST API `/translate` route with `POST` method. The request body must be provided as `application/json`. The body structure is tested by API Gateway against `src/functions/translate/schema.ts` JSON-Schema definition: it must contain the `name` property.
 
-- requesting any other path than `/translate` with any other method than `POST` will result in API Gateway returning a `403` HTTP error code
-- sending a `POST` request to `/translate` with a payload **not** containing a string property named `name` will result in API Gateway returning a `400` HTTP error code
-- sending a `POST` request to `/translate` with a payload containing a string property named `name` will result in API Gateway returning a `200` HTTP status code with a message saluting the provided name and the detailed event processed by the lambda
+- sending a `POST` request to `/translate` with a payload **not** containing a string property named `text` and `language` will result in API Gateway returning a `400` HTTP error code
+- sending a `POST` request to `/translate` with a payload containing a string property named `text` and language code like fr, de, will result in API Gateway returning a `200` HTTP status code with a desired response containing the translated text.
 
 > :warning: As is, this template, once deployed, opens a **public** endpoint within your AWS account resources. Anybody with the URL can actively execute the API Gateway endpoint and the corresponding lambda. You should protect this endpoint with the authentication method of your choice.
 
